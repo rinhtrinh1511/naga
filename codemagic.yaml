@@ -8,10 +8,11 @@ workflows:
       - name: Build IPA
         script: |
           xcodebuild archive \
-            -workspace Unity-iPhone.xcworkspace \
+            -project Unity-iPhone.xcodeproj \
             -scheme Unity-iPhone \
             -configuration Release \
             -archivePath build/Unity-iPhone.xcarchive
+          
           xcodebuild -exportArchive \
             -archivePath build/Unity-iPhone.xcarchive \
             -exportPath build/output \
